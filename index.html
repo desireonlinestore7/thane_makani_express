@@ -15,6 +15,7 @@ body {
   flex-direction:column;
 }
 
+/* Header */
 header {
   background:#b00020;
   color:white;
@@ -29,6 +30,7 @@ header h1 {
   white-space:nowrap;
 }
 
+/* Container */
 .container {
   max-width:900px;
   margin:30px auto;
@@ -38,6 +40,7 @@ header h1 {
   box-shadow:0 8px 20px rgba(0,0,0,0.15);
 }
 
+/* Cards & Rows */
 .card {
   background:#fff8f8;
   padding:15px;
@@ -45,7 +48,6 @@ header h1 {
   box-shadow:0 4px 10px rgba(0,0,0,0.08);
   margin-bottom:15px;
 }
-
 .row {
   display:flex;
   gap:10px;
@@ -53,6 +55,7 @@ header h1 {
   flex-wrap:wrap;
 }
 
+/* Inputs */
 select, input[type=text], textarea {
   padding:10px;
   border:1px solid #ccc;
@@ -62,6 +65,7 @@ select, input[type=text], textarea {
 input[type=text]{text-transform:uppercase;}
 textarea{resize:vertical;}
 
+/* Buttons */
 button {
   background:#b00020;
   color:white;
@@ -75,10 +79,12 @@ button:hover{background:#7a0015;}
 button:disabled{background:#ccc;cursor:not-allowed;}
 .small{padding:6px 12px;font-size:14px;}
 
+/* Submissions Table */
 #submissionsSection{display:none;margin-top:20px;}
 table{border-collapse:collapse;width:100%;margin-top:10px;}
 th, td{border:1px solid #ccc;padding:6px;text-align:left;}
 
+/* Footer */
 footer {
   margin-top:auto;
   background:#b00020;
@@ -90,6 +96,7 @@ footer {
 }
 footer a{color:#ffd54f;text-decoration:none;font-weight:600;}
 
+/* Thank You Modal */
 #thankyouModal {
   display:none;
   position:fixed;
@@ -175,7 +182,7 @@ footer a{color:#ffd54f;text-decoration:none;font-weight:600;}
   text-align:center;
 }
 
-/* Vertical news ticker with gradient animation */
+/* News Ticker */
 .note{
   flex:1;
   min-width:220px;
@@ -193,37 +200,44 @@ footer a{color:#ffd54f;text-decoration:none;font-weight:600;}
   50%{background-position:100% 50%;}
   100%{background-position:0% 50%;}
 }
-.news-ticker-vertical{
+
+.ticker-inner {
   display:flex;
   flex-direction:column;
+  will-change: transform;
   animation: scrollUp 60s linear infinite;
 }
-.news-ticker-vertical .news-item{
+.ticker-inner .news-item{
   padding: 8px 0;
-  font-size: 15px;
-  font-weight: 600;
-  color: #b00020cc;
-  line-height: 1.3;
+  font-size:15px;
+  font-weight:600;
+  color:#b00020cc;
+  line-height:1.3;
 }
-.news-ticker-vertical .news-item:first-child{
-  font-size: 18px;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  font-weight: 700;
+.ticker-inner .news-item:first-child{
+  font-size:18px;
+  font-weight:700;
+  white-space:nowrap;
+  overflow:hidden;
+  text-overflow:ellipsis;
 }
+.note:hover .ticker-inner{animation-play-state:paused;}
 @keyframes scrollUp{
   0%{ transform: translateY(100%); }
   100%{ transform: translateY(-100%); }
 }
-.note:hover .news-ticker-vertical{ animation-play-state: paused; }
-@media (max-width:480px){ 
-  .news-ticker-vertical .news-item{ font-size:14px; } 
-  .news-ticker-vertical .news-item:first-child{ font-size:16px; }
+
+/* Mobile Adjustments */
+@media (max-width:480px){
+  .note { max-height:300px; padding:12px; }
+  .ticker-inner { animation-duration:90s; }
+  .ticker-inner .news-item{ font-size:14px; line-height:1.4; }
+  .ticker-inner .news-item:first-child{ font-size:16px; }
 }
 </style>
 </head>
 <body>
+
 <header>
   <h1>" श्री संत शिरोमणी मारुती महाराज एक्सप्रेस "</h1>
 </header>
@@ -236,9 +250,7 @@ footer a{color:#ffd54f;text-decoration:none;font-weight:600;}
       <button id="addSupporterBtn" class="small">+ समर्थक जोडा</button>
     </div>
   </div>
-
   <div id="supportersList"></div>
-
   <div style="margin-top:20px;text-align:center;">
     <button id="viewBtn">View Submissions</button>
   </div>
@@ -248,23 +260,20 @@ footer a{color:#ffd54f;text-decoration:none;font-weight:600;}
   </div>
 </div>
 
-<!-- Video + Vertical News Banner Section -->
+<!-- Video + News Banner -->
 <div class="video-note-section">
   <div class="note">
-    <div class="news-ticker-vertical">
+    <div class="ticker-inner">
       <div class="news-item">🚌🌿 श्री संत शिरोमणी मारुती महाराज एक्सप्रेस 🌿🚌</div>
       <div class="news-item">💞 ठाणे – माकणी – ठाणे 💞</div>
       <div class="news-item">लोकप्रिय मार्ग:</div>
       <div class="news-item">माकणी, दत्तनगर, खेड पाटी, लोहारा खुर्द, लोहारा, शिवकर वस्ती, हिप्परगा रवा, सलगरा दिवटी, वडगाव, जवळगा, बारुळ, तिर्थ, लहान तिर्थ, तुळजापूर, सोलापूर, मोहोळ, टेंभुर्णी, इंदापूर, कुरकुंभ, उरळी कांचन, हडपसर, स्वारगेट, पनवेल, कामोठे, खारघर, बेलापूर सी.बी.डी., नेरुळ फाटा, रबाळे, ऐरोली नाका, कोकण भवन, ठाणे वंदना, ठाणे सी.बी.एस.</div>
-      <div class="news-item">आगार:</div>
-      <div class="news-item">ठाणे २ आगार | ठाणे विभाग | म.रा.मा.प.म.</div>
-      <div class="news-item">⏰ गाडी सुटण्याची वेळ:</div>
-      <div class="news-item">⏰ ठाणे वंदना: सकाळी ७ वाजता</div>
-      <div class="news-item">⏰ माकणी: सकाळी ९ वाजता</div>
-      <div class="news-item">(सदर व्हिडिओ 🏞️: कोविड-१९ काळात खंडित झालेली बस सेवा पुन्हा सुरु करताना करण्यात आली होती तेव्हाचा आहे  )</div>
-      
+      <div class="news-item">आगार: ठाणे २ आगार | ठाणे विभाग | म.रा.मा.प.म.</div>
+      <div class="news-item">⏰ गाडी सुटण्याची वेळ: ठाणे वंदना ७ वाजता | माकणी ९ वाजता</div>
+      <div class="news-item">(सदर व्हिडिओ 🏞️: कोविड-१९ काळात खंडित झालेली बस सेवा पुन्हा सुरु करताना करण्यात आली होती तेव्हाचा आहे)</div>
     </div>
   </div>
+
   <div class="video">
     <video id="mainVideo" controls autoplay muted playsinline
       style="width:100%; max-width:300px; border-radius:12px; box-shadow:0 4px 12px rgba(0,0,0,0.25);">
@@ -302,9 +311,8 @@ Designed with ❤️ by <a href="#">SUYOG</a>
   </div>
 </div>
 
-<!-- JavaScript (Supporter Form & View Submissions) -->
+<!-- Supporter JS -->
 <script>
-// Your previous JS for supporter form, Google Sheets, and view submissions remains unchanged
 document.addEventListener('DOMContentLoaded', () => {
   const supportersList = document.getElementById('supportersList');
   const addSupporterBtn = document.getElementById('addSupporterBtn');
@@ -342,12 +350,10 @@ document.addEventListener('DOMContentLoaded', () => {
     const villageSelect = createVillageDropdown();
     row.appendChild(villageSelect);
 
-    const nameInput = document.createElement('input');
-    nameInput.type='text'; nameInput.placeholder='नाव'; nameInput.style.display='none';
+    const nameInput = document.createElement('input'); nameInput.type='text'; nameInput.placeholder='नाव'; nameInput.style.display='none';
     row.appendChild(nameInput);
 
-    const surnameInput = document.createElement('input');
-    surnameInput.type='text'; surnameInput.placeholder='आडनाव'; surnameInput.style.display='none';
+    const surnameInput = document.createElement('input'); surnameInput.type='text'; surnameInput.placeholder='आडनाव'; surnameInput.style.display='none';
     row.appendChild(surnameInput);
 
     const messageInput = document.createElement('textarea');
@@ -356,10 +362,7 @@ document.addEventListener('DOMContentLoaded', () => {
     messageInput.style.flex='2'; messageInput.style.maxHeight='300px'; messageInput.style.overflowY='auto';
     row.appendChild(messageInput);
 
-    messageInput.addEventListener('input', ()=> {
-      messageInput.style.height='auto';
-      messageInput.style.height=(messageInput.scrollHeight)+'px';
-    });
+    messageInput.addEventListener('input', ()=> { messageInput.style.height='auto'; messageInput.style.height=(messageInput.scrollHeight)+'px'; });
 
     const submitBtn=document.createElement('button'); submitBtn.textContent='Submit';
     row.appendChild(submitBtn);
