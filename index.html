@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>श्री संत शिरोमणी मारुती महाराज एक्सप्रेस</title>
 <style>
-body{
+body {
   font-family:'Segoe UI',Roboto,Arial,sans-serif;
   margin:0;
   background:linear-gradient(135deg,#fff8f8,#ffecec);
@@ -14,19 +14,22 @@ body{
   display:flex;
   flex-direction:column;
 }
-header{
+
+header {
   background:#b00020;
   color:white;
   padding:20px;
   text-align:center;
   border-bottom:6px solid #ffd54f;
 }
-header h1{
+header h1 {
   margin:0;
-  font-size:30px;
+  font-size:28px;
   font-weight:700;
+  white-space:nowrap;
 }
-.container{
+
+.container {
   max-width:900px;
   margin:30px auto;
   padding:20px;
@@ -34,20 +37,23 @@ header h1{
   border-radius:12px;
   box-shadow:0 8px 20px rgba(0,0,0,0.15);
 }
-.card{
+
+.card {
   background:#fff8f8;
   padding:15px;
   border-radius:10px;
   box-shadow:0 4px 10px rgba(0,0,0,0.08);
   margin-bottom:15px;
 }
-.row{
+
+.row {
   display:flex;
   gap:10px;
   align-items:center;
   flex-wrap:wrap;
 }
-select, input[type=text], textarea{
+
+select, input[type=text], textarea {
   padding:10px;
   border:1px solid #ccc;
   border-radius:8px;
@@ -55,7 +61,8 @@ select, input[type=text], textarea{
 }
 input[type=text]{text-transform:uppercase;}
 textarea{resize:vertical;}
-button{
+
+button {
   background:#b00020;
   color:white;
   border:none;
@@ -67,10 +74,12 @@ button{
 button:hover{background:#7a0015;}
 button:disabled{background:#ccc;cursor:not-allowed;}
 .small{padding:6px 12px;font-size:14px;}
+
 #submissionsSection{display:none;margin-top:20px;}
 table{border-collapse:collapse;width:100%;margin-top:10px;}
 th, td{border:1px solid #ccc;padding:6px;text-align:left;}
-footer{
+
+footer {
   margin-top:auto;
   background:#b00020;
   color:white;
@@ -80,7 +89,8 @@ footer{
   border-top:4px solid #ffd54f;
 }
 footer a{color:#ffd54f;text-decoration:none;font-weight:600;}
-#thankyouModal{
+
+#thankyouModal {
   display:none;
   position:fixed;
   top:0;
@@ -92,7 +102,7 @@ footer a{color:#ffd54f;text-decoration:none;font-weight:600;}
   align-items:center;
   justify-content:center;
 }
-#thankyouModal .modal-content{
+#thankyouModal .modal-content {
   background:#b00020;
   color:#fff;
   padding:30px;
@@ -111,15 +121,15 @@ footer a{color:#ffd54f;text-decoration:none;font-weight:600;}
 #thankyouModal p{font-size:20px;font-weight:bold;}
 #thankyouModal button{
   margin-top:15px;
-  background:#ffd54f;
-  color:#000;
-  border:none;
-  padding:8px 16px;
-  border-radius:8px;
-  cursor:pointer;
-  font-weight:600;
+  background:#ffd54f;color:#000;border:none;
+  padding:8px 16px;border-radius:8px;cursor:pointer;font-weight:600;
 }
-@keyframes fadeIn{from{opacity:0; transform:scale(0.95);} to{opacity:1; transform:scale(1);}}
+@keyframes fadeIn{
+  from{opacity:0; transform:scale(0.95);}
+  to{opacity:1; transform:scale(1);}
+}
+
+/* Image Slider */
 .image-slider{
   overflow:hidden;
   background:#fff8f8;
@@ -139,8 +149,14 @@ footer a{color:#ffd54f;text-decoration:none;font-weight:600;}
   flex:0 0 auto;
   filter: drop-shadow(0 2px 4px rgba(0,0,0,0.2));
 }
-@keyframes scroll{0%{transform:translateX(0);}100%{transform:translateX(-50%);}}
-@media (max-width:480px){.slide-track img{width:90px;}.slide-track{animation-duration:24s;}}
+@keyframes scroll{
+  0%{transform:translateX(0);}
+  100%{transform:translateX(-50%);}
+}
+@media (max-width:480px){
+  .slide-track img{width:90px;}
+  .slide-track{animation-duration:24s;}
+}
 
 /* Video + Vertical News Banner */
 .video-note-section{
@@ -150,44 +166,66 @@ footer a{color:#ffd54f;text-decoration:none;font-weight:600;}
   justify-content:center;
   gap:20px;
   padding:20px;
-  background: linear-gradient(135deg,#fff3e6,#ffe6f0);
-  border-radius:12px;
 }
-/* Vertical news ticker */
+
+/* Video */
+.video{
+  flex:1;
+  min-width:200px;
+  text-align:center;
+}
+
+/* Vertical news ticker with gradient animation */
 .note{
   flex:1;
   min-width:220px;
   max-height:250px;
   overflow:hidden;
   border-radius:12px;
-  box-shadow:0 4px 12px rgba(0,0,0,0.15);
-  background:linear-gradient(180deg,#fff8f0,#ffe0d4);
   padding:10px;
+  background: linear-gradient(135deg, #ffe6f0, #fff3e6, #fff8f0, #ffe0d4);
+  background-size: 400% 400%;
+  animation: gradientBG 15s ease infinite;
+  box-shadow:0 4px 12px rgba(0,0,0,0.15);
+}
+@keyframes gradientBG {
+  0%{background-position:0% 50%;}
+  50%{background-position:100% 50%;}
+  100%{background-position:0% 50%;}
 }
 .news-ticker-vertical{
   display:flex;
   flex-direction:column;
-  animation: scrollUp 30s linear infinite;
+  animation: scrollUp 60s linear infinite;
 }
 .news-ticker-vertical .news-item{
-  padding: 10px 0;
-  font-size: 18px;
+  padding: 8px 0;
+  font-size: 15px;
   font-weight: 600;
-  color: #b00020;
-  line-height: 1.4;
+  color: #b00020cc;
+  line-height: 1.3;
+}
+.news-ticker-vertical .news-item:first-child{
+  font-size: 18px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-weight: 700;
 }
 @keyframes scrollUp{
   0%{ transform: translateY(100%); }
   100%{ transform: translateY(-100%); }
 }
-/* hover pause */
 .note:hover .news-ticker-vertical{ animation-play-state: paused; }
-@media (max-width:480px){ .news-ticker-vertical .news-item{ font-size:16px; } }
+@media (max-width:480px){ 
+  .news-ticker-vertical .news-item{ font-size:14px; } 
+  .news-ticker-vertical .news-item:first-child{ font-size:16px; }
+}
 </style>
 </head>
 <body>
 <header>
-<h1>" श्री संत शिरोमणी मारुती महाराज एक्सप्रेस "</h1>
+  <h1>" श्री संत शिरोमणी मारुती महाराज एक्सप्रेस "</h1>
 </header>
 
 <!-- Supporter Form -->
@@ -214,14 +252,20 @@ footer a{color:#ffd54f;text-decoration:none;font-weight:600;}
 <div class="video-note-section">
   <div class="note">
     <div class="news-ticker-vertical">
-      <div class="news-item">🚌🌿 <strong style="font-size:20px;">श्री संत शिरोमणी मारुती महाराज एक्सप्रेस</strong> 🌿🚌</div>
+      <div class="news-item">🚌🌿 श्री संत शिरोमणी मारुती महाराज एक्सप्रेस 🌿🚌</div>
       <div class="news-item">💞 ठाणे – माकणी – ठाणे 💞</div>
-      <div class="news-item">लोकप्रिय मार्ग: माकणी, दत्तनगर, खेड पाटी, लोहारा खुर्द, लोहारा, शिवकर वस्ती, हिप्परगा रवा, सलगरा दिवटी, वडगाव, जवळगा, बारुळ, तिर्थ, लहान तिर्थ, तुळजापूर, सोलापूर, मोहोळ, टेंभुर्णी, इंदापूर, कुरकुंभ, उरळी कांचन, हडपसर, स्वारगेट, पनवेल, कामोठे, खारघर, बेलापूर सी.बी.डी., नेरुळ फाटा, रबाळे, ऐरोली नाका, कोकण भवन, ठाणे वंदना, ठाणे सी.बी.एस.</div>
-      <div class="news-item">🏛️ आगार: ठाणे २ आगार | ठाणे विभाग | म.रा.मा.प.म.</div>
-      <div class="news-item">⏰ गाडी सुटण्याची वेळ: ठाणे वंदना: सकाळी ७ वाजता, माकणी: सकाळी ९ वाजता</div>
+      <div class="news-item">लोकप्रिय मार्ग:</div>
+      <div class="news-item">माकणी, दत्तनगर, खेड पाटी, लोहारा खुर्द, लोहारा, शिवकर वस्ती, हिप्परगा रवा, सलगरा दिवटी, वडगाव, जवळगा, बारुळ, तिर्थ, लहान तिर्थ, तुळजापूर, सोलापूर, मोहोळ, टेंभुर्णी, इंदापूर, कुरकुंभ, उरळी कांचन, हडपसर, स्वारगेट, पनवेल, कामोठे, खारघर, बेलापूर सी.बी.डी., नेरुळ फाटा, रबाळे, ऐरोली नाका, कोकण भवन, ठाणे वंदना, ठाणे सी.बी.एस.</div>
+      <div class="news-item">आगार:</div>
+      <div class="news-item">ठाणे २ आगार | ठाणे विभाग | म.रा.मा.प.म.</div>
+      <div class="news-item">⏰ गाडी सुटण्याची वेळ:</div>
+      <div class="news-item">⏰ ठाणे वंदना: सकाळी ७ वाजता</div>
+      <div class="news-item">⏰ माकणी: सकाळी ९ वाजता</div>
+      <div class="news-item">(सदर व्हिडिओ 🏞️: कोविड-१९ काळात खंडित झालेली बस सेवा पुन्हा सुरु करताना करण्यात आली होती तेव्हाचा आहे  )</div>
+      
     </div>
   </div>
-  <div class="video" style="flex:1; min-width:200px; text-align:center;">
+  <div class="video">
     <video id="mainVideo" controls autoplay muted playsinline
       style="width:100%; max-width:300px; border-radius:12px; box-shadow:0 4px 12px rgba(0,0,0,0.25);">
       <source src="video_2025-11-20_14-53-14.mp4" type="video/mp4">
@@ -234,7 +278,7 @@ footer a{color:#ffd54f;text-decoration:none;font-weight:600;}
 <div class="image-slider" aria-hidden="true">
   <div class="slide-track">
     <img src="thane makani 1.jpg" alt="Bus">
-    <img src="thane makani cabin.jpg" alt="MSRTC Logo">
+    <img src="thane makani cabin 2.jpg" alt="MSRTC Logo">
     <img src="thane makani cabin.jpg" alt="Bus">
     <img src="thane cabin 3.jpg" alt="MSRTC Logo">
     <img src="thane makani decored.jpg" alt="Bus">
@@ -258,7 +302,9 @@ Designed with ❤️ by <a href="#">SUYOG</a>
   </div>
 </div>
 
+<!-- JavaScript (Supporter Form & View Submissions) -->
 <script>
+// Your previous JS for supporter form, Google Sheets, and view submissions remains unchanged
 document.addEventListener('DOMContentLoaded', () => {
   const supportersList = document.getElementById('supportersList');
   const addSupporterBtn = document.getElementById('addSupporterBtn');
@@ -271,74 +317,90 @@ document.addEventListener('DOMContentLoaded', () => {
   const VIEW_PASSWORD = 'THANE1234';
   const GOOGLE_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbxgqXe_kM4D1rPi875t6hvKolgq4uIcZmX8I8qgQsSrZM72F_sojzXOUcuffrEShbzZ/exec";
 
-  const villages = [
-    "माकणी","दत्तनगर","खेड पाटी","लोहारा खुर्द","लोहारा","शिवकर वस्ती","हिप्परगा रवा","सलगरा दिवटी",
-    "वडगाव","जवळगा","बारुळ","तिर्थ","लहान तिर्थ","तुळजापूर","सोलापूर","मोहोळ","टेंभुर्णी",
-    "इंदापूर","कुरकुंभ","उरळी कांचन","हडपसर","स्वारगेट","पनवेल","कामोठे","खारघर",
-    "बेलापूर सी.बी.डी.","नेरुळ फाटा","रबाळे","ऐरोली नाका","कोकण भवन","ठाणे वंदना","ठाणे सी.बी.एस."
-  ];
+  const villages = ["माकणी","दत्तनगर","खेड पाटी","लोहारा खुर्द","लोहारा","शिवकर वस्ती","हिप्परगा रवा","सलगरा दिवटी",
+                    "वडगाव","जवळगा","बारुळ","तिर्थ","लहान तिर्थ","तुळजापूर","सोलापूर","मोहोळ","टेंभुर्णी",
+                    "इंदापूर","कुरकुंभ","उरळी कांचन","हडपसर","स्वारगेट","पनवेल","कामोठे","खारघर",
+                    "बेलापूर सी.बी.डी.","नेरुळ फाटा","रबाळे","ऐरोली नाका","कोकण भवन","ठाणे वंदना","ठाणे सी.बी.एस."];
 
-  function createVillageDropdown(selected=''){
+  function createVillageDropdown(selected='') {
     const select = document.createElement('select');
     select.className = 'supVillage';
-    const def = document.createElement('option');
-    def.value=''; def.textContent='गाव निवडा';
+    const def = document.createElement('option'); def.value=''; def.textContent='गाव निवडा';
     select.appendChild(def);
     villages.forEach(v=>{
-      const opt = document.createElement('option');
-      opt.value=v; opt.textContent=v;
+      const opt = document.createElement('option'); opt.value=v; opt.textContent=v;
       if(v===selected) opt.selected=true;
       select.appendChild(opt);
     });
     return select;
   }
 
-  function addSupporter(){
-    const s=document.createElement('div'); s.className='supporter card';
-    const row=document.createElement('div'); row.className='row';
+  function addSupporter() {
+    const s = document.createElement('div'); s.className='supporter card';
+    const row = document.createElement('div'); row.className='row';
 
-    const villageSelect=createVillageDropdown(); row.appendChild(villageSelect);
+    const villageSelect = createVillageDropdown();
+    row.appendChild(villageSelect);
 
-    const nameInput=document.createElement('input'); nameInput.type='text'; nameInput.placeholder='नाव'; nameInput.style.display='none'; row.appendChild(nameInput);
-    const surnameInput=document.createElement('input'); surnameInput.type='text'; surnameInput.placeholder='आडनाव'; surnameInput.style.display='none'; row.appendChild(surnameInput);
-    const messageInput=document.createElement('textarea'); messageInput.placeholder='संदेश (ऐच्छिक, जास्तीत जास्त 200 अक्षरे)'; messageInput.rows=2; messageInput.style.display='none'; messageInput.style.flex='2'; messageInput.style.maxHeight='300px'; messageInput.style.overflowY='auto'; row.appendChild(messageInput);
+    const nameInput = document.createElement('input');
+    nameInput.type='text'; nameInput.placeholder='नाव'; nameInput.style.display='none';
+    row.appendChild(nameInput);
 
-    messageInput.addEventListener('input',()=>{ messageInput.style.height='auto'; messageInput.style.height=(messageInput.scrollHeight)+'px'; });
+    const surnameInput = document.createElement('input');
+    surnameInput.type='text'; surnameInput.placeholder='आडनाव'; surnameInput.style.display='none';
+    row.appendChild(surnameInput);
 
-    const submitBtn=document.createElement('button'); submitBtn.textContent='Submit'; row.appendChild(submitBtn);
+    const messageInput = document.createElement('textarea');
+    messageInput.placeholder='संदेश (ऐच्छिक, जास्तीत जास्त 200 अक्षरे)';
+    messageInput.rows=2; messageInput.style.display='none';
+    messageInput.style.flex='2'; messageInput.style.maxHeight='300px'; messageInput.style.overflowY='auto';
+    row.appendChild(messageInput);
 
-    s.appendChild(row); supportersList.appendChild(s);
+    messageInput.addEventListener('input', ()=> {
+      messageInput.style.height='auto';
+      messageInput.style.height=(messageInput.scrollHeight)+'px';
+    });
 
-    villageSelect.addEventListener('change',()=>{
-      const show=villageSelect.value!==''; 
+    const submitBtn=document.createElement('button'); submitBtn.textContent='Submit';
+    row.appendChild(submitBtn);
+
+    s.appendChild(row);
+    supportersList.appendChild(s);
+
+    villageSelect.addEventListener('change', ()=>{
+      const show = villageSelect.value!==''; 
       nameInput.style.display=show?'block':'none';
       surnameInput.style.display=show?'block':'none';
       messageInput.style.display=show?'block':'none';
-      if(!show){ nameInput.value=''; surnameInput.value=''; messageInput.value=''; }
+      if(!show){nameInput.value='';surnameInput.value='';messageInput.value='';}
     });
 
-    submitBtn.addEventListener('click',async ()=>{
+    submitBtn.addEventListener('click', async ()=>{
       const nameVal=nameInput.value.trim();
       const surnameVal=surnameInput.value.trim();
       const villageVal=villageSelect.value;
       const messageVal=messageInput.value.trim();
+
       if(!villageVal || !nameVal || !surnameVal){ alert('गाव, नाव आणि आडनाव आवश्यक आहे'); return; }
       const wordCount=(nameVal+' '+surnameVal).trim().split(/\s+/).length;
       if(wordCount>3){ alert('नाव जास्तीत जास्त ३ शब्द असू शकतात'); return; }
       if(messageVal.length>200){ alert('संदेश जास्तीत जास्त 200 अक्षरे असू शकतात'); return; }
+
       const bannedWords=["sex","adult","porn","xxx","fuck","hot girl","nude","dildo","bitch","ass"];
       const lower=(nameVal+' '+surnameVal+' '+messageVal).toLowerCase();
       for(const bad of bannedWords){ if(lower.includes(bad)){ alert('अयोग्य शब्द स्वीकारले जाणार नाहीत.'); return; } }
 
       try{
         await fetch(GOOGLE_SCRIPT_URL,{
-          method:"POST", mode:"no-cors", headers:{"Content-Type":"application/json"},
-          body: JSON.stringify({ village:villageVal, name:nameVal+' '+surnameVal, message:messageVal })
+          method:"POST",
+          mode:"no-cors",
+          headers:{"Content-Type":"application/json"},
+          body:JSON.stringify({village:villageVal,name:nameVal+' '+surnameVal,message:messageVal})
         });
         s.remove();
         thankyouModal.style.display='flex';
         addSupporterBtn.disabled=false;
-      }catch(err){ alert('डेटा सेव्ह करताना त्रुटी: '+err); }
+      }catch(err){alert('डेटा सेव्ह करताना त्रुटी: '+err);}
     });
   }
 
@@ -348,7 +410,7 @@ document.addEventListener('DOMContentLoaded', () => {
   modalOkBtn.addEventListener('click',closeModal);
   thankyouModal.addEventListener('click',(e)=>{ if(e.target===thankyouModal) closeModal(); });
 
-  viewBtn.addEventListener('click',async ()=>{
+  viewBtn.addEventListener('click', async ()=>{
     const pw=prompt('सबमिशन पाहण्यासाठी पासवर्ड द्या:');
     if(pw!==VIEW_PASSWORD){ alert('चुकीचा पासवर्ड!'); return; }
 
@@ -361,19 +423,17 @@ document.addEventListener('DOMContentLoaded', () => {
 
       const table=document.createElement('table');
       const thead=document.createElement('thead');
-      thead.innerHTML=`<tr>
-        <th>क्र.</th><th>गाव</th><th>नाव</th><th>संदेश</th><th>Timestamp</th>
-      </tr>`; table.appendChild(thead);
-
+      thead.innerHTML=`<tr><th>क्र.</th><th>गाव</th><th>नाव</th><th>संदेश</th><th>Timestamp</th></tr>`;
+      table.appendChild(thead);
       const tbody=document.createElement('tbody');
-      data.forEach((d,i)=>{
+      data.forEach((item,index)=>{
         const tr=document.createElement('tr');
-        tr.innerHTML=`<td>${i+1}</td><td>${d.village}</td><td>${d.name}</td><td>${d.message || '-'}</td><td>${d.timestamp}</td>`;
+        tr.innerHTML=`<td>${index+1}</td><td>${item.village}</td><td>${item.name}</td><td>${item.message}</td><td>${item.timestamp||''}</td>`;
         tbody.appendChild(tr);
       });
       table.appendChild(tbody);
       submissionList.innerHTML=''; submissionList.appendChild(table);
-    }catch(err){ submissionList.textContent='डेटा fetch करताना त्रुटी: '+err; }
+    }catch(err){ submissionList.textContent='लोड करताना त्रुटी: '+err; }
   });
 });
 </script>
