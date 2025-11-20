@@ -45,6 +45,9 @@ footer a{color:#ffd54f;text-decoration:none;font-weight:600;}
 .slide-track img{width:250px;height:auto;flex:0 0 auto;filter: drop-shadow(0 2px 4px rgba(0,0,0,0.2));}
 @keyframes scroll{0%{transform:translateX(0);}100%{transform:translateX(-50%);}}
 @media (max-width:480px){.slide-track img{width:90px;}.slide-track{animation-duration:24s;}}
+.video-note-section{display:flex; flex-wrap:wrap; align-items:center; justify-content:center; gap:20px; padding:20px; background:#fff8f8;}
+.video-note-section .note{flex:1; min-width:200px; font-size:18px; color:#b00020; line-height:1.5;}
+.video-note-section .video{flex:1; min-width:200px; text-align:center;}
 </style>
 </head>
 <body>
@@ -52,6 +55,7 @@ footer a{color:#ffd54f;text-decoration:none;font-weight:600;}
 <h1>" श्री संत शिरोमणी मारुती महाराज एक्सप्रेस "</h1>
 </header>
 
+<!-- Supporter Form -->
 <div class="container">
   <div class="card">
     <div class="row" style="justify-content:space-between">
@@ -71,43 +75,45 @@ footer a{color:#ffd54f;text-decoration:none;font-weight:600;}
   </div>
 </div>
 
-<!-- Video Section (Above Slider) -->
-<div style="text-align:center; padding:20px; background:#fff8f8;">
-  <video id="mainVideo" controls autoplay muted playsinline 
-    style="width:95%; max-width:300px; border-radius:12px; box-shadow:0 4px 12px rgba(0,0,0,0.25);">
-    <source src="video_2025-11-20_14-53-14.mp4" type="video/mp4">
-    Your browser does not support the video tag.
-  </video>
-</div>
+<!-- Video + Note Section -->
+<div class="video-note-section">
+  <!-- Left: Note -->
+  <div class="note">
+    गावकऱ्यांच्या आनंदी चेहऱ्यांनी या मार्गाला इतिहास दिला.<br>
+    स्वारगेट-माकणी-निलंगा बससेवेच्या पहिल्या दिवशीचा उत्साह आजही जिवंत आहे!
+  </div>
 
-<div class="image-slider" aria-hidden="true">
-  <div class="slide-track">
-    <img src="thane makani 476290687_631936725860377_8811227691902539330_n.jpg" alt="Bus">
-    <img src="40] thane makani 469659011_890067269928740_4703205766442432836_n.jpg" alt="MSRTC Logo">
-    <img src="37] thane makani 473008558_909602087975258_2134748219573886504_n.jpg" alt="Bus">
-    <img src="33] thaane makani 476342935_631949882525728_174096488674273573_n.jpg" alt="MSRTC Logo">
-    <img src="30] thane makani 469825671_890071616594972_8110265356411082537_n.jpg" alt="Bus">
-    <img src="19 ] thane makani IMG-20230106-WA0004.jpg" alt="MSRTC Logo">
+  <!-- Right: Video -->
+  <div class="video">
+    <video id="mainVideo" controls autoplay muted playsinline
+      style="width:100%; max-width:300px; border-radius:12px; box-shadow:0 4px 12px rgba(0,0,0,0.25);">
+      <source src="video_2025-11-20_14-53-14.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
   </div>
 </div>
 
-
-
-<div style="text-align:center;padding:20px;background:#f4f4ce;border-top:2px solid #ffd54f;">
-  <p style="font-size:22px;font-weight:500;color:#b00020;">
-    गावकऱ्यांच्या आनंदी चेहऱ्यांनी या मार्गाला इतिहास दिला.<br>
-    स्वारगेट-माकणी-निलंगा बससेवेच्या पहिल्या दिवशीचा उत्साह आजही जिवंत आहे!
-  </p>
+<!-- Image Slider Below -->
+<div class="image-slider" aria-hidden="true">
+  <div class="slide-track">
+    <img src="thane_makani_476290687_631936725860377_8811227691902539330_n.jpg" alt="Bus">
+    <img src="40_thane_makani_469659011_890067269928740_4703205766442432836_n.jpg" alt="MSRTC Logo">
+    <img src="37_thane_makani_473008558_909602087975258_2134748219573886504_n.jpg" alt="Bus">
+    <img src="33_thaane_makani_476342935_631949882525728_174096488674273573_n.jpg" alt="MSRTC Logo">
+    <img src="30_thane_makani_469825671_890071616594972_8110265356411082537_n.jpg" alt="Bus">
+    <img src="19_thane_makani_IMG-20230106-WA0004.jpg" alt="MSRTC Logo">
+  </div>
 </div>
 
 <footer>
-© 2025 MSRTC 💛 ग्रामीण भागातील प्रवाशांना  जोडणारी जीवनवाहिनी! 💛 | ठाणे-तुळजापूर-माकणी मार्ग <br>
+© 2025 MSRTC 💛 ग्रामीण भागातील प्रवाशांना जोडणारी जीवनवाहिनी! 💛 | ठाणे-तुळजापूर-माकणी मार्ग <br>
 Designed with ❤️ by <a href="#">SUYOG</a>
 </footer>
 
+<!-- Thank You Modal -->
 <div id="thankyouModal">
   <div class="modal-content">
-    <img src="thane makani 476290687_631936725860377_8811227691902539330_n.jpg" alt="MSRTC Logo" style="width:80px;height:auto;">
+    <img src="thane_makani_476290687_631936725860377_8811227691902539330_n.jpg" alt="MSRTC Logo" style="width:80px;height:auto;">
     <img src="cfb65196ffd48228a48cb3a8618c9181.jpg" alt="Bus Icon" style="width:100px;height:auto;">
     <h2>🙏 धन्यवाद माऊली 🙏</h2>
     <p>आपली नोंदणी पूर्ण झाली!</p>
@@ -115,6 +121,7 @@ Designed with ❤️ by <a href="#">SUYOG</a>
   </div>
 </div>
 
+<!-- JavaScript (Supporter Form & View Submissions) -->
 <script>
 document.addEventListener('DOMContentLoaded', () => {
   const supportersList = document.getElementById('supportersList');
@@ -179,10 +186,9 @@ document.addEventListener('DOMContentLoaded', () => {
     row.appendChild(messageInput);
 
     messageInput.addEventListener('input', () => {
-    messageInput.style.height = 'auto';
-    messageInput.style.height = (messageInput.scrollHeight) + 'px';
+      messageInput.style.height = 'auto';
+      messageInput.style.height = (messageInput.scrollHeight) + 'px';
     });
-
 
     const submitBtn = document.createElement('button');
     submitBtn.textContent = 'Submit';
@@ -240,7 +246,6 @@ document.addEventListener('DOMContentLoaded', () => {
   modalOkBtn.addEventListener('click',closeModal);
   thankyouModal.addEventListener('click',(e)=>{ if(e.target===thankyouModal) closeModal(); });
 
-  // View Submissions
   viewBtn.addEventListener('click', async () => {
     const pw = prompt('सबमिशन पाहण्यासाठी पासवर्ड द्या:');
     if(pw!==VIEW_PASSWORD){ alert('चुकीचा पासवर्ड!'); return; }
@@ -275,10 +280,7 @@ document.addEventListener('DOMContentLoaded', () => {
       submissionList.appendChild(table);
     } catch(err){ submissionList.textContent='डेटा fetch करताना त्रुटी: '+err; }
   });
-
 });
 </script>
 </body>
 </html>
-
-
